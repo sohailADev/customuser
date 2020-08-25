@@ -1,0 +1,35 @@
+{% extends "base.htm" %}
+{% block content %}
+<div class="container">
+
+    <table class="table">
+        {% if request.user.is_authenticated %}
+        <tbody>
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Names</th>
+                    <th scope="col">Values</th>
+
+                </tr>
+            </thead>
+            <tr>
+                <th scope="row">User Name :</th>
+                <td>{{request.user.username}}</td>
+
+            </tr>
+            <tr>
+                <th scope="row">User Display Name :</th>
+                <td>{{request.user.displayname}}</td>
+
+            </tr>
+
+            <tr>
+                <th scope="row">value of settings. AUTH_USER_MODEL :</th>
+                <td> {{setting_auth_user_model}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+    {%endif%}
+</div>
+{%endblock%}
